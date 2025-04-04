@@ -1,0 +1,38 @@
+httplug:
+    plugins:
+        retry:
+            retry: 1
+
+    discovery:
+        client: 'httplug.client.curl'
+
+    clients:
+        payment_gateway_shift4:
+            factory: 'httplug.factory.curl'
+            config:
+                CURLOPT_TIMEOUT: 15
+                CURLOPT_SSL_VERIFYPEER: true
+            plugins:
+                - authentication:
+                      auth:
+                          type: 'basic'
+                          username: '%env(SHIFT4_SECRET_API_KEY)%'
+                          password: ''
+                - base_uri:
+                      uri: '%env(SHIFT4_API_URL)%'
+                - 'httplug.plugin.content_length'
+                - 'httplug.plugin.redirect'
+        payment_gateway_aci:
+            factory: 'httplug.factory.curl'
+            config:
+                CURLOPT_TIMEOUT: 15
+                CURLOPT_SSL_VERIFYPEER: true
+            plugins:
+                - authentication:
+                      auth:
+                          type: 'bearer'
+                          token: '%env(ACI_API_KEY)%'
+                - base_uri:
+                      uri: '%env(ACI_API_URL)%'
+                - 'httplug.plugin.content_length'
+                - 'httplug.plugin.redirect'

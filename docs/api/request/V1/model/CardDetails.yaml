@@ -1,0 +1,24 @@
+title: CardDetails
+type: object
+properties:
+  number:
+    type: string
+    example: '4242424242424242'
+    description: Card number
+  expYear:
+    type: string
+    example: '2030'
+    description: Expiration year
+  expMonth:
+    type: string
+    example: '02'
+    description: Expiration month
+  cvv:
+    type: string
+    example: '123'
+    description: CVV
+required:
+  - number
+  - expYear
+  - expMonth
+  - cvv

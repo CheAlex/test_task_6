@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    httplug.client.payment_gateway_shift4:
+        class: Http\Mock\Client

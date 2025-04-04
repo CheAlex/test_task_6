@@ -1,0 +1,29 @@
+title: CreatePaymentResponse
+type: object
+properties:
+  transactionId:
+    type: string
+    example: 'char_qIKVTx7xUylNCOHMgs7vWp4U'
+    description: Transaction id
+  createdAt:
+    type: string
+    format: date-time
+    example: '2025-04-03T21:34:22+00:00'
+  amount:
+    type: string
+    example: '108.96'
+    description: Decimal amount
+  currency:
+    type: string
+    example: 'USD'
+    description: Currency
+  cardBin:
+    type: string
+    example: '424242'
+    description: Card BIN
+required:
+  - transactionId
+  - createdAt
+  - amount
+  - currency
+  - cardBin
