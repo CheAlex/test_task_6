@@ -1,0 +1,17 @@
+title: CreatePaymentResponse
+type: object
+properties:
+  amount:
+    type: string
+    example: '108.96'
+    description: Decimal amount
+  currency:
+    type: string
+    example: 'USD'
+    description: Currency
+  card:
+    $ref: ../model/CardDetails.yaml
+required:
+  - amount
+  - currency
+  - card
