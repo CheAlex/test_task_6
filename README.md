@@ -35,7 +35,7 @@ curl -X POST "http://localhost:8080/v1/payment/aci" \
   }'
 ```
 
-## Cli command
+## CLI command
 * run `docker exec -it card_payment_service_php_fpm bash`
 * run `bin/console app:payment:create shift4 12.34 USD 4242424242424242 2025 12 123`
 * run `bin/console app:payment:create aci 12.34 EUR 4200000000000000 2034 05 123`
